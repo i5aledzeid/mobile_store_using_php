@@ -28,15 +28,17 @@
 						<th>Name</th>
 						<th>Default Delivery Address</th>
 						<th>Contact</th>
+						<th>Image</th>
 						<th>Email</th>
-						<th>Email</th>
+						<th>Address</th>
 						<th>Gender</th>
 						<th>Date Created</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
-					$i = 1;
+						$i = 1;
+						$id = 1;
 						$qry = $conn->query("SELECT * from `clients`");
 						while($row = $qry->fetch_assoc()):
 							foreach($row as $k=> $v){
@@ -48,7 +50,10 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td><?php echo $row['firstname'] .' '. $row['lastname'] ?></td>
 							<td><?php echo $row['date_created'] ?></td>
-							<td ><p class="m-0 truncate"><?php echo $row['contact'] ?></p></td>
+							<td><?php echo $row['default_delivery_address'] ?></td>
+							<td ><p class="m-0 truncate">
+								<?php echo '<img style="width: 32px;" src="../uploads/clients/client_'.$id++.'/'.$row['image'].'" alt="photo">'; ?>
+							</p></td>
 							<!--<td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success">Active</span>
@@ -57,7 +62,7 @@
                                 <?php endif; ?>
                             </td>-->
 							<td><?php echo $row['email'] ?></td>
-							<td><?php echo $row['default_delivery_address'] ?></td>
+							<td ><p class="m-0 truncate"><?php echo $row['contact'] ?></p></td>
 							<td><?php echo $row['gender'] ?></td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
@@ -65,7 +70,7 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item" href="?page=product/manage_product&id=<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+				                    <a class="dropdown-item" href="?page=clients/manage_client&id=<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>

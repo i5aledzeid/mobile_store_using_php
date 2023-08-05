@@ -71,6 +71,23 @@
                         </p>
                       </a>
                     </li>
+                    <li class="nav-item dropdown">
+                      <a href="<?php echo base_url ?>admin/?page=store" class="nav-link nav-store">
+                        <i class="nav-icon fas fa-shopping-bag"></i>
+                        <p>
+                          Stores
+                        </p>
+                      </a>
+                    </li>
+                    <li class="nav-header">Settings</li>
+                    <li class="nav-item dropdown">
+                      <a href="<?php echo base_url ?>admin/?page=system_info" class="nav-link nav-system_info">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Settings
+                        </p>
+                      </a>
+                    </li>
                     <li class="nav-header">Maintenance</li>
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=maintenance/brand" class="nav-link nav-maintenance_brand">
@@ -93,14 +110,6 @@
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
                           Sub Category List
-                        </p>
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a href="<?php echo base_url ?>admin/?page=system_info" class="nav-link nav-system_info">
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>
-                          Settings
                         </p>
                       </a>
                     </li>
